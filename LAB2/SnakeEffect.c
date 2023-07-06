@@ -16,12 +16,12 @@ int main(void)
 
 	DDRA = 0xff;
 	PORTA =0x00;
-    while (1)
-    {
-		BIT_SET(PORTA,0);
-		_delay_ms(1000);
-		BIT_CLEAR(PORTA,0);
-		_delay_ms(1000);
-    }
+	while (1)
+	{
+		for(int i =0;i<8;i++){
+			BIT_TOGGLE(PORTA,i);
+			_delay_ms(100);
+		}
+	}
 }
 
