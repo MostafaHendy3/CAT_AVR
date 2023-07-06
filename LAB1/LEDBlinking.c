@@ -1,11 +1,9 @@
 /*
- * test.c
+ * LEDBlinking.c
  *
  *  Created on: Jul 6, 2023
- *      Author: mr hendy
+ *      Author: MrHendy
  */
-
-
 #include <util/delay.h>
 #include "BITMATH.h"
 typedef unsigned int u8;
@@ -20,10 +18,10 @@ int main(void)
 	PORTA =0x00;
     while (1)
     {
-		for(int i =0;i<8;i++){
-			BIT_TOGGLE(PORTA,i);
-			_delay_ms(100);
-		}
+		BIT_SET(PORTA,0);
+		_delay_ms(1000);
+		BIT_CLEAR(PORTA,0);
+		_delay_ms(1000);
     }
 }
 
